@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Minha Loja Virtual</title>
+  <link rel="stylesheet" href="styles/styles.css">
+
+</head>
+<body>
+
+<header>
+  <h1>Minha Loja</h1>
+  <nav>
+    <a href="#produtos">Produtos</a>
+    <a href="#sobre">Sobre</a>
+    <a href="#footer">Contato</a>
+    <a href="#" onclick="toggleLogin(event)">Área Administrativa</a>
+  </nav>
+</header>
+
+<!-- Login -->
+<div class="login hidden" id="login-form">
+  <h2>Área Administrativa</h2>
+  <input type="text" id="usuario" placeholder="Usuário" />
+  <input type="password" id="senha" placeholder="Senha" />
+  <button class="login-btn" onclick="fazerLogin()">Entrar</button>
+</div>
+
+<!-- Admin -->
+<div class="admin-area hidden" id="admin-area">
+  <h2>Adicionar Produto</h2>
+  <input type="text" id="nome" placeholder="Nome do produto" />
+  <input type="text" id="preco" placeholder="Preço (ex: R$ 99,00)" />
+  <input type="file" id="imagem" accept="image/*" />
+  <button id="btn-addProduto" onclick="adicionarProduto()">Adicionar Produto</button>
+
+  <hr style="margin: 20px 0;" />
+
+  <h2>Editar Sobre</h2>
+  <button class="sobre-btn" onclick="abrirModalSobre()">Editar Texto Sobre</button>
+
+  <hr style="margin: 20px 0;" />
+
+  <h2>Contato</h2>
+  <input type="tel" id="telefone" placeholder="Número do WhatsApp (ex: 5511999999999)" />
+  <button id="btn-contatoAdm" onclick="salvarTelefone()">Salvar Número</button>
+
+  <button id="btn-logout">Sair da Área Admin</button>
+</div>
+
+<!-- Produtos -->
+<section id="produtos">
+  <h2>Produtos Disponíveis da Loja</h2>
+  <div class="produtos" id="lista-produtos"></div>
+</section>
+
+<!-- Sobre -->
+<section id="sobre">
+  <h2>Sobre Nós</h2>
+  <div id="sobre-texto" class="sobre">
+    <p id="texto-sobre">
+      Somos uma loja virtual apaixonada por oferecer os melhores produtos com preços acessíveis e entrega rápida.
+      Trabalhamos para trazer qualidade e inovação ao seu dia a dia.
+      Todos os produtos são escolhidos com cuidado para garantir sua satisfação.
+    </p>
+  </div>
+</section>
+
+<!-- Rodapé -->
+<footer id="footer">
+  <p>&copy; 2025 Minha Loja Virtual - Todos os direitos reservados.</p>
+</footer>
+
+<!-- Modal para editar Sobre -->
+<div id="modal-sobre" class="hidden">
+  <div class="modal-content">
+    <button class="close-btn" onclick="fecharModalSobre()">&times;</button>
+    <h3>Editar Texto Sobre</h3>
+    <textarea id="textarea-sobre"></textarea>
+    <button onclick="salvarSobre()">Salvar</button>
+  </div>
+</div>
+
+<script src="scripts/script.js"></script>
+</body>
+</html>

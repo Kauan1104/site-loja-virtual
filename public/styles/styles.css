@@ -1,0 +1,228 @@
+    * {
+      box-sizing: border-box;
+      margin: 0; padding: 0;
+      scroll-behavior: smooth;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    body {
+      background-color: #f2f2f2;
+      color: #333;
+    }
+    header {
+      background-color: #581d22;
+      color: #e6f1f8;
+      padding: 50px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    header h1 {
+      margin-left: 20px;
+    }
+    nav {
+      margin-right: 20px;
+    }
+    nav a {
+      color: #e6f1f8;
+      margin-left: 15px;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 8px;
+      border-radius: 5px;
+      transition: background 0.3s;
+      cursor: pointer;
+    }
+    nav a:hover {
+      background-color: #444;
+    }
+    section {
+      padding: 60px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+    h2 {
+      margin-bottom: 30px;
+      font-size: 35px;
+      text-align: center;
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      color: #703137;
+    }
+    .produtos {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 100px;
+    }
+    .produto {
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      padding: 50px;
+      text-align: center;
+      position: relative;
+    }
+    .produto img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 10px;
+    }
+    .produto button, .produto .btn-excluir {
+      margin-top: 8px;
+      padding: 8px 10px;
+      font-weight: bold;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .produto button {
+      background-color: #25d366;
+      color: white;
+      width: 100%;
+    }
+    .produto button:hover {
+      background-color: #1ebe57;
+    }
+    .produto .btn-excluir {
+      background-color: #dc3545;
+      color: white;
+      position: absolute;
+      top: 0px;
+      padding: 10px;
+      width: 120px;
+      right: 30%;
+      font-size: 12px;
+      display: none;
+    }
+    .produto.admin .btn-excluir {
+      display: inline-block;
+    }
+    .login, .admin-area {
+      max-width: 400px;
+      margin: 40px auto;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    .login h2, .admin-area h2 {
+      margin-bottom: 15px;
+      text-align: center;
+    }
+    input, textarea {
+      width: 100%;
+      margin-bottom: 10px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 16px;
+    }
+    button.login-btn, button.admin-area button, button.sobre-btn {
+      width: 100%;
+      padding: 10px;
+      background-color: #28a745;
+      color: #fff;
+      font-weight: bold;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.3s;
+      font-size: 16px;
+    }
+    button.login-btn:hover, button.admin-area button:hover, button.sobre-btn:hover {
+      background-color: #218838;
+    }
+    .hidden {
+      display: none;
+    }
+    /* Estilo moderno para Sobre */
+    #sobre {
+      background: #fdfdfd;
+      border-left: 6px solid #b84545;
+      padding: 20px 30px;
+      border-radius: 6px;
+      max-width: 800px;
+      margin: 40px auto;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      color: #c56069;
+      font-size: 18px;
+      line-height: 1.6;
+    }
+    #sobre h2 {
+      color: #c56069;
+    }
+    #btn-logout {
+      background-color: #dc3545;
+      margin-top: 15px;
+      padding: 10px;
+      color: white;
+      border-radius: 5px;
+    }
+    #btn-logout:hover {
+      background-color: #b02a37;
+    }
+    #btn-contatoAdm{
+      background-color: #36ca67;
+      margin-top: 15px;
+      padding: 10px;
+      color: white;
+      border-radius: 5px;
+    }
+    #btn-addProduto {
+      background-color: #dc3545;
+      margin-top: 15px;
+      padding: 10px;
+      color: white;
+      border-radius: 5px;
+    }
+    footer {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 30px 10px;
+      margin-top: 50px;
+    }
+    /* Modal Sobre */
+    #modal-sobre {
+      position: fixed;
+      top: 0; left: 0; right:0; bottom:0;
+      background: rgba(0,0,0,0.5);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1500;
+    }
+    #modal-sobre.hidden {
+      display: none;
+    }
+    #modal-sobre .modal-content {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      max-width: 500px;
+      width: 90%;
+      position: relative;
+    }
+    #modal-sobre textarea {
+      height: 150px;
+      resize: vertical;
+    }
+    .close-btn {
+      position: absolute;
+      right: 10px;
+      top: 10px;
+      font-size: 24px;
+      border: none;
+      background: none;
+      cursor: pointer;
+      font-weight: bold;
+      color: #888;
+      transition: color 0.3s;
+    }
+    .close-btn:hover {
+      color: #000;
+    }
